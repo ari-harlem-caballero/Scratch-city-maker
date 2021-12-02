@@ -29,3 +29,18 @@
     // create an HTML element with the catchphrase as its text content
     // and append that HTML element to the cleared-out DOM
 }
+
+## Events
+change of dropdowns:
+  - image with change to matching dropdown selection
+    - value of dropdown elem -> change img `.src`
+  - count of dropdown increases
+    - typeCount++
+    - DOM change to update new count
+button click:
+  - get slogan from `input.value`
+  - push slogan to array of slogans `array.push(slogan)`
+  - update DOM
+    - clear old slogan from DOM
+    - loop through slogan array
+    - append ea slogan
