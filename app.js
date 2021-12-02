@@ -19,7 +19,36 @@ let sloganArray = 0;
 skylineDropdown.addEventListener('change', () => {
 // get value from dropdown elem
     const id = skylineDropdown.value;
+// value of dropdown elem -> change img `.src`
+    skylineImg.src = `./assets/skyline-${id}.jpeg`;
+// count of dropdown increases
+    skylineCount++;
+// DOM change to update new count
+    countElem.textContent = `You changed the skyline ${skylineCount} times`;
 });
+
+castleDropdown.addEventListener('change', () => {
+
+    const id = castleDropdown.value;
+
+    castleImg.src = `./assets/castle-${id}.jpeg`;
+
+    castleCount++;
+
+    countElem.textContent = `You changed the castle ${castleCount} times`;
+});
+
+waterfrontDropdown.addEventListener('change', () => {
+
+    const id = waterfrontDropdown.value;
+
+    waterfrontImg.src = `./assets/waterfront-${id}.jpeg`;
+
+    waterfrontCount++;
+
+    countElem.textContent = `You changed the waterfront ${waterfrontCount} times`;
+});
+
   // get user input
   // use user input to update state 
   // update DOM to reflect the new state
