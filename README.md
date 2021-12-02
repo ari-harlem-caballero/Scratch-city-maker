@@ -44,3 +44,9 @@ button click:
     - clear old slogan from DOM
     - loop through slogan array
     - append ea slogan
+display stats:
+  - displayStats(waterfront, skyline, castle) with countElem
+  - TDD of func
+    - test in example.test.js
+    - import from test
+    - import test.js to app.js
