@@ -10,8 +10,16 @@ const sloganButton = document.querySelector('#slogan-button');
 const countElem = document.querySelector('.count');
 
 // let state
+let skylineCount = 0;
+let castleCount = 0;
+let waterfrontCount = 0;
+let sloganArray = 0;
 
 // set event listeners 
+skylineDropdown.addEventListener('change', () => {
+// get value from dropdown elem
+    const id = skylineDropdown.value;
+});
   // get user input
   // use user input to update state 
   // update DOM to reflect the new state
