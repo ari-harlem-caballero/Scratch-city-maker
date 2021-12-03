@@ -1,25 +1,52 @@
-## The Golden Rule: 
+## HTML SetUp
+1) Three dropdowns
+  - WHY? Can tell which image user selected.
+  - HOW? `dropdown event listener`, `dropdown.value` for selected image
+2) Three images
+  - WHY? Display selected image.
+  - HOW? `img.src`
+3) Input form
+  - WHY? User can type slogan.
+  - HOW? `array.push(slogan)`, `const slogan = input.value`
+4) Button
+  - WHY? Submit the slogan.
+  - HOW? `button event listener`
+5) Div for slogan
+  - WHY? Place to hold slogan.
+  - HOW? `display() using for loop`
 
-🦸 🦸‍♂️ `Stop starting and start finishing.` 🏁
+`function displayCatchphrases() {`
+    // clear out the DOM for the currently displayed catchphrases
+    `catchphrasesEl.textContent = '';`
+    // loop through each catchphrase in state
+    // and for each catchphrase
+    `for (let catchPhrase of catchPhraseArray) {`
+        `const p = document.createElement('p');`
+        `p.classList.add('catchPhrase');`
+        `p.textContent = catchPhrase;`
+        `catchphrasesEl.append(p);`
+    }
+    // create an HTML element with the catchphrase as its text content
+    // and append that HTML element to the cleared-out DOM
+}
 
-If you work on more than one feature at a time, you are guaranteed to multiply your bugs and your anxiety.
-
-## Making a plan
-
-1) **Make a drawing of your app. Simple "wireframes"**
-1) **Once you have a drawing, name the HTML elements you'll need to realize your vision**
-1) **For each HTML element ask: Why do I need this?** 
-1) **Once we know _why_ we need each element, think about how to implement the "Why" as a "How"**
-1) **Find all the 'events' (user clicks, form submit, on load etc) in your app. Ask one by one, "What happens when" for each of these events. Does any state change?**
-1) **Think about how to validate each of your features according to a Definition of Done**
-1) **Consider what features _depend_ on what other features. Use this dependency logic to figure out what order to complete tasks.**
-
-Additional considerations:
-- Ask: which of your HTML elements need to be hard coded, and which need to be dynamically generated?
-- Consider your data model. 
-  - What kinds of objects (i.e., Dogs, Friends, Todos, etc) will you need? 
-  - What are the key/value pairs? 
-  - What arrays might you need? 
-  - What needs to live in a persistence layer?
-- Is there some state we need to initialize?
-- Ask: should any of this work be abstracted into functions? (i.e., is the work complicated? can it be resused?)
+## Events
+change of dropdowns:
+  - image with change to matching dropdown selection
+    - value of dropdown elem -> change img `.src`
+  - count of dropdown increases
+    - typeCount++
+    - DOM change to update new count
+button click:
+  - get slogan from `input.value`
+  - push slogan to array of slogans `array.push(slogan)`
+  - update DOM
+    - clear old slogan from DOM
+    - loop through slogan array
+    - append ea slogan
+display stats:
+  - displayStats(waterfront, skyline, castle) with countElem
+  - TDD of func
+    - test in example.test.js
+    - import from test
+    - import test.js to app.js
