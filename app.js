@@ -1,4 +1,5 @@
 // import functions and grab DOM elements
+import { makeStatsString } from './utils.js';
 const skylineDropdown = document.querySelector('#skyline-dropdown');
 const castleDropdown = document.querySelector('#castle-dropdown');
 const waterfrontDropdown = document.querySelector('#waterfront-dropdown');
@@ -25,7 +26,7 @@ skylineDropdown.addEventListener('change', () => {
 // count of dropdown increases
     skylineCount++;
 // DOM change to update new count
-    countElem.textContent = `You changed the skyline ${skylineCount} times`;
+    displayStats(skylineCount);
 });
 
 castleDropdown.addEventListener('change', () => {
@@ -36,7 +37,7 @@ castleDropdown.addEventListener('change', () => {
 
     castleCount++;
 
-    countElem.textContent = `You changed the castle ${castleCount} times`;
+    displayStats(castleCount);
 });
 
 waterfrontDropdown.addEventListener('change', () => {
@@ -47,7 +48,7 @@ waterfrontDropdown.addEventListener('change', () => {
 
     waterfrontCount++;
 
-    countElem.textContent = `You changed the waterfront ${waterfrontCount} times`;
+    displayStats(waterfrontCount);
 });
 
 sloganButton.addEventListener('click', () => {
@@ -73,3 +74,10 @@ sloganButton.addEventListener('click', () => {
   // get user input
   // use user input to update state 
   // update DOM to reflect the new state
+function displayStats() {
+    countElem.textContent = `You've changed the waterfront ${waterfrontCount} times, the skyline ${skylineCount} times, and the castle ${castleCount} times.`;
+
+    const statsString = makeStatsString(skylineCount, castleCount, waterfrontCount);
+
+    makeStatsString(statsString);
+}
